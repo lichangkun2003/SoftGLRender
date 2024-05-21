@@ -1,0 +1,11 @@
+Model Information:
+* title:	Asia Building
+* source:	https://sketchfab.com/3d-models/asia-building-a3f45195b01f48ff9f687d3ceac52b82
+* author:	Solarliu (https://sketchfab.com/jacky15621419)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Asia Building" (https://sketchfab.com/3d-models/asia-building-a3f45195b01f48ff9f687d3ceac52b82) by Solarliu (https://sketchfab.com/jacky15621419) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
