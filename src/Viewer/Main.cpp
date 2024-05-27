@@ -72,7 +72,7 @@ int main() {
 #endif
 
   /* create a windowed mode window and its OpenGL context */
-  GLFWwindow *window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, u8"»Ì‰÷»æ∆˜", nullptr, nullptr);
+  GLFWwindow *window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, u8"Õº–Œ“˝«Ê", nullptr, nullptr);
 
 
   GLFWimage images[1];
