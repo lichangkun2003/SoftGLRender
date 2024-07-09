@@ -52,7 +52,7 @@ class Config {
   glm::vec3 pointLightColor = {0.5f, 0.5f, 0.5f};
 
   int aaType = AAType_NONE;
-  int rendererType = Renderer_SOFT;
+  int rendererType = Renderer_OPENGL;
   float shadowMapBias = 0.0f;
   int shadowtype = 0;
 };

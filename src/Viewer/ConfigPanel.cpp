@@ -43,14 +43,29 @@ void ConfigPanel::onDraw() {
   ImGui_ImplOpenGL3_NewFrame();
   ImGui_ImplGlfw_NewFrame();
   ImGui::NewFrame();
+  float firstWindowHeight = 0.0f;
+  float windowWidth = 250.0f;
+
+  ImGui::SetNextWindowSize(ImVec2(windowWidth, 0)); // 设置第一个窗口的宽度
+  ImGui::Begin("##fps",
+      nullptr,
+      ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_NoMove);
+
+  // Display your metrics
+  ImGui::Text("fps: %.1f (%.2f ms/frame)", ImGui::GetIO().Framerate, 1000.0f / ImGui::GetIO().Framerate);
+  ImGui::Text("triangles: %zu", config_.triangleCount_);
+  ImGui::SetWindowPos(ImVec2(frameWidth_ - windowWidth, 0));
+  // Get the height of the first window
+  firstWindowHeight = ImGui::GetWindowHeight();
+  // End the window
+  ImGui::End();
 
   // Settings window
   ImGui::Begin("Settings",
                nullptr,
-               ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize
-                   | ImGuiWindowFlags_AlwaysAutoResize);
+               ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_AlwaysAutoResize);
   drawSettings();
-  ImGui::SetWindowPos(ImVec2(frameWidth_ - ImGui::GetWindowWidth(), 0));
+  ImGui::SetWindowPos(ImVec2(frameWidth_ - windowWidth, firstWindowHeight));
   ImGui::End();
 
   ImGui::Render();
@@ -102,10 +117,6 @@ void ConfigPanel::drawSettings() {
     }
   }
 
-  // fps
-  ImGui::Separator();
-  ImGui::Text("fps: %.1f (%.2f ms/frame)", ImGui::GetIO().Framerate, 1000.0f / ImGui::GetIO().Framerate);
-  ImGui::Text("triangles: %zu", config_.triangleCount_);
 
   // model
   ImGui::Separator();
